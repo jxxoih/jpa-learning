@@ -1,0 +1,41 @@
+server:
+  port: 8889
+
+# db??
+spring:
+  application:
+    name: rest-api
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3380/portfolio?&serverTimezone=UTC&autoReconnect=true&allowMultiQueries=true&characterEncoding=UTF-8
+    username: jiho
+    password: 1111
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        use_sql_comments: true
+mybatis:
+  mapper-locations: classpath:mapper/**.xml
+
+  spring:
+    application:
+      name: rest-api
+    profiles:
+      active: prod
+    datasource:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3380/portfolio?&serverTimezone=UTC&autoReconnect=true&allowMultiQueries=true&characterEncoding=UTF-8
+      username: jiho
+      password: 1111
+    jpa:
+      properties:
+        hibernate:
+          show_sql: true
+          format_sql: true
+          use_sql_comments: true
+  mybatis:
+    mapper-locations: classpath:mapper/**.xml
